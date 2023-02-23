@@ -11,12 +11,14 @@ import { FortmaticConnector } from '@web3-react/fortmatic-connector'
 import { MagicConnector } from '@web3-react/magic-connector'
 import { PortisConnector } from '@web3-react/portis-connector'
 import { TorusConnector } from '@web3-react/torus-connector'
+import { BitKeepConnector } from './bitkeep/bitkeep-connector'
 
 const POLLING_INTERVAL = 12000
 const RPC_URLS: { [chainId: number]: string } = {
   1: process.env.RPC_URL_1 as string,
   4: process.env.RPC_URL_4 as string
 }
+export const bitkeepInjected = new BitKeepConnector({ supportedChainIds: [1, 3, 4, 5, 42, 56 ,128, 137] })
 
 export const injected = new InjectedConnector({ supportedChainIds: [1, 3, 4, 5, 42] })
 

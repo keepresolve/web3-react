@@ -12,6 +12,7 @@ import { formatEther } from '@ethersproject/units'
 import { useEagerConnect, useInactiveListener } from '../hooks'
 import {
   injected,
+  bitkeepInjected,
   network,
   walletconnect,
   walletlink,
@@ -28,6 +29,7 @@ import {
 import { Spinner } from '../components/Spinner'
 
 enum ConnectorNames {
+  bitkeepInjected='bitkeepInjected',
   Injected = 'Injected',
   Network = 'Network',
   WalletConnect = 'WalletConnect',
@@ -44,6 +46,7 @@ enum ConnectorNames {
 }
 
 const connectorsByName: { [connectorName in ConnectorNames]: any } = {
+  [ConnectorNames.bitkeepInjected] :bitkeepInjected,
   [ConnectorNames.Injected]: injected,
   [ConnectorNames.Network]: network,
   [ConnectorNames.WalletConnect]: walletconnect,
